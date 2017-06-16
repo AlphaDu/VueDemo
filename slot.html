@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+<body>
+  <div id="app">
+    <children>
+      <span>12345</span>
+    </children>
+  </div>
+</body>
+<script type="text/javascript">
+  var vm = new Vue({
+    el:"#app",
+    components:{
+        children:{
+            template:"<button><slot></slot>明确作用范围按钮</button>"
+        }
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <input v-model="message"/>
+        <input v-model="message"/>
+        <p>{{message|capitalize|addZero}}</p>
+        <span>Multiline message is:</span>
+    </div>
+    <div id="app2"></div>
+</body>
+<script type="text/javascript">
+var ins =  new Vue({
+        el:'#app',
+        data:{
+            message:''
+        },
+        filters:{
+            capitalize:function(value){
+                if(value){
+                    value = value.toString();
+                    return  value.charAt(0).toUpperCase() + value.slice(1)
+                }
+            },
+            addZero:function(value){
+                if(value){
+                    var zStr = "";
+                    for(var i = 0 ;i < value.toString().length ; i ++){
+                        zStr += "0";
+                    }
+                    return value + zStr;
+                   
+                }
+               
+            }
+        }
+    });
+var ins2 = new Vue({
+    
+});
+</script>
+</html>

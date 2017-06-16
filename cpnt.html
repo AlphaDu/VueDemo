@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+<script type="text/javascript">
+    Vue.component('child', {
+        // 声明 props
+        props: ['message'],
+        // 就像 data 一样，prop 可以用在模板内
+        // 同样也可以在 vm 实例中像 “this.message” 这样使用
+        template: '<span>{{ message }}</span>'
+    });
+    Vue.component('my-component', {
+        template: '<div>A custom component!</div>'
+    })
+</script>
+<body>
+  <div id="app">
+      <child message="test"></child>
+  </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:'#app'
+    })
+</script>
+</html>
