@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Login from '../containers/login.vue'
-Vue.use(Router)
+import E404 from '../containers/404'
+import Mainpage from '../containers/mainpage.vue'
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -12,18 +14,26 @@ export default new Router({
       component: Hello
     },
     {
-      path:'/login',
-      name:'Login',
-      component:Login
-    },{
-      path:'/',
-      beforeEnter:(to,from,next) =>{
-        next({path:"/login"})
-      }
-
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/',
+      beforeEnter: (to, from, next) => {
+        next({path: "/login"})
+      },
+    },
+    {
+      path:'/mainpage',
+      component:Mainpage
+    },
+    {
+      path:'/*',
+      component:E404
     }
   ]
 })
-function isLogin(){
+function isLogin () {
 
 }

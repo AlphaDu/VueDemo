@@ -21,7 +21,7 @@
    },
    methods:{
        login:function () {
-         
+          this.$router.push("hello");
        }
    }
  }
