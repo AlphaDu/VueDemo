@@ -1,23 +1,33 @@
 <template>
-  <div id="app" >
+  <div id="app">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app',
+    data: {
+      userName: '',
+      token: '',
+      loginTime:'',
+    },
+    computed:{
+        isLogin(){
+            return !!this.userName
+        },
+    }
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 0;
-  width:100%;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0;
+    width: 100%;
+  }
 </style>

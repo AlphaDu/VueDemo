@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Login from '../containers/login.vue'
 import E404 from '../containers/404'
 import Mainpage from '../containers/mainpage.vue'
+import Components from '../containers/components.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -26,12 +27,21 @@ export default new Router({
     },
     {
       path:'/mainpage',
-      component:Mainpage
+      component:Mainpage,
+      children:[
+        {
+          path:'/components',
+          component:Components
+        }
+      ]
     },
+
     {
       path:'/*',
       component:E404
-    }
+    },
+
+
   ]
 })
 function isLogin () {
