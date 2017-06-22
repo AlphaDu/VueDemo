@@ -8,10 +8,11 @@
       </router-link>
     </li>
     <li class="head-menu-button" @click.capture.stop="onclickMenu">
+      <router-link to="/tree">
       <span>
-        施工中
+        VDOM树
       </span>
-    
+      </router-link>
     </li>
     <li class="head-menu-button" @click.capture.stop="onclickMenu">
       <span>

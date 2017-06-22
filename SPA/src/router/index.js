@@ -5,6 +5,7 @@ import Login from '../containers/login.vue'
 import E404 from '../containers/404'
 import Mainpage from '../containers/mainpage.vue'
 import Components from '../containers/components.vue'
+import Trees from '../containers/trees.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -32,6 +33,10 @@ export default new Router({
         {
           path:'/components',
           component:Components
+        },
+        {
+          path:'/tree',
+          component:Trees
         }
       ]
     },
